@@ -17,8 +17,8 @@ git clone https://github.com/openai/gym.git
 cd gym
 pip install -e .
 cd ..
-
+```
 clone this repository
 ```
-git clone https://github.com/Kanazawanaoaki/rl-pybulletgym-memo.git
+git clone https://github.com/Kanazawanaoaki/rl-gym-memo.git
 ```
