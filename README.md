@@ -29,9 +29,29 @@ cd rl-gym-memo
 python test.py
 ```
 
+Install gym[atari] for atari environment in gym
+```
+pip install gym[atari]
+```
+
 ## activate virtualenv
 before start
 ```
 cd gym_dir
 source gym-env/bin/activate
+```
+
+## try OpenAI Gym Handson
+
+[OpenAI Gym Handson](https://github.com/icoxfog417/techcircle_openai_handson)  
+
+```
+cd gym_dir
+git clone https://github.com/icoxfog417/techcircle_openai_handson.git
+pip install gym[atari]
+```
+
+install chainer for try DQN
+```
+pip install chainer
 ```

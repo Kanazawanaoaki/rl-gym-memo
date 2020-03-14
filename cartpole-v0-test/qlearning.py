@@ -116,6 +116,8 @@ for episode in range(num_episodes):  #試行数分繰り返す
         if isrender == 0:
             #env = wrappers.Monitor(env, './movie/cartpole-experiment-1') #動画保存する場合
             isrender = 1
+        else : ## 追加した
+            break 
     #10エピソードだけでどんな挙動になるのか見たかったら、以下のコメントを外す
     #if episode>10:
     #    if isrender == 0:
@@ -123,5 +125,6 @@ for episode in range(num_episodes):  #試行数分繰り返す
     #        isrender = 1
     #    islearned=1;
 
-if islearned:
-    np.savetxt('final_x.csv', final_x, delimiter=",")
+env.env.close()
+# if islearned:
+    # np.savetxt('final_x.csv', final_x, delimiter=",")
