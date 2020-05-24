@@ -29,6 +29,11 @@ cd rl-gym-memo
 python test.py
 ```
 
+Install gym[atari] for atari environment in gym
+```
+pip install gym[atari]
+```
+
 ## activate virtualenv
 before start
 ```
@@ -36,6 +41,7 @@ cd gym_dir
 source gym-env/bin/activate
 ```
 
+<<<<<<< HEAD
 ## try mujoco env
 Some environments in Gym  use mujoco. If you want to use those envs, you need to install mujoco along [this gide](https://github.com/openai/mujoco-py#install-mujoco).  
 In my case, I need to some extra install as bellow.
@@ -52,3 +58,19 @@ git clone https://github.com/openai/baselines.git
 pip install tensorflow==1.14 # if you don't install tensorflow yet
 pip install -e .
 ```
+=======
+## try OpenAI Gym Handson
+
+[OpenAI Gym Handson](https://github.com/icoxfog417/techcircle_openai_handson)  
+
+```
+cd gym_dir
+git clone https://github.com/icoxfog417/techcircle_openai_handson.git
+pip install gym[atari]
+```
+
+install chainer for try DQN
+```
+pip install chainer
+```
+>>>>>>> 78b5397903a30bba3ff3ada06579496d267a0508
