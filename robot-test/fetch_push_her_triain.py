@@ -5,7 +5,7 @@ from stable_baselines import HER, SAC, DDPG, TD3
 from stable_baselines.her import GoalSelectionStrategy, HERGoalEnvWrapper
 from stable_baselines.ddpg import NormalActionNoise
 
-env = gym.make('FetchReach-v1')
+env = gym.make('FetchPush-v1')
 obs = env.reset()
 done = False
 
@@ -18,32 +18,16 @@ goal_selection_strategy = 'future' # equivalent to GoalSelectionStrategy.FUTURE
 # Wrap the model
 model = HER('MlpPolicy', env, model_class, n_sampled_goal=4, goal_selection_strategy=goal_selection_strategy,verbose=1)
 
-# # Train the model
-# model.learn(1000)
+# Train the model
+model.learn(500000)
 
-# model.save("her_fetch_reach_env")
+model.save("fetch_push_env_her")
 
-# WARNING: you must pass an env
-# or wrap your environment with HERGoalEnvWrapper to use the predict method
-model = HER.load('her_fetch_reach_env', env=env)
+# def policy(observation, desired_goal):
+#     # Here you would implement your smarter policy. In this case,
+#     # we just sample random actions.
+#     return env.action_space.sample()
 
-obs = env.reset()
-for _ in range(500):
-    env.render()
-    action, _ = model.predict(obs)
-    obs, reward, done, _ = env.step(action)
-
-    if done:
-        obs = env.reset()
-
-# while not done:
-#     env.render()
-#     action, _ = model.predict(obs)
-#     obs, reward, done, _ = env.step(action)
-
-#     if done:
-#         obs = env.reset()    
-        
 # while not done:
 #     env.render()
 #     action = policy(obs['observation'], obs['desired_goal'])
